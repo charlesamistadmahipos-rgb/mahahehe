@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Bouquet for You 💐</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="scene" id="scene">
+
+    <!-- Animated background -->
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="moon"></div>
+    <div class="stars"></div>
+    <div class="particles" id="particles"></div>
+    <div class="petals" id="petals"></div>
+
+    
+    <!-- Apology screen -->
+    <section class="apology" id="apology">
+      <div class="apology-card">
+        <div class="apology-text" id="pages"><p class="page">Maha, if there's one thing I'll always be grateful for, it's the experiences we've shared and the memories we've created together. We've had our happiest moments, our misunderstandings, our difficult conversations, and times when things weren't as easy as we wanted them to be. We've had moments when we worried about losing each other, when we struggled to understand one another, and when we needed reassurance that our love was still strong.</p><p class="page">But through everything, I've learned that loving you isn't just about being there during the beautiful moments, it's also about understanding you through the difficult ones and choosing to grow with you despite our differences. Every laugh, every conversation, every little memory, and every challenge has become a part of our story that I'll always treasure.</p><p class="page">Maha, I love you so, so much, more than words could ever fully explain. And if there's one thing I want you to remember, it's that my love for you isn't something I want to give up on just because things get difficult.</p><p class="page">I want to keep learning about you, understanding you, growing with you, and making more beautiful memories by your side. I can't promise that everything will always be perfect, but I hope we continue choosing each other, even on the days when loving each other takes a little more patience and understanding.</p><p class="page">I love you so much, Maha, and I want to keep loving you until the very end of our story. Whatever challenges we may face and wherever life takes us, you'll always be someone incredibly special to me.</p><p class="page">I'm thankful that I met you, thankful for every moment we've shared, and thankful that I get to call you the person I love. If I could choose all over again, knowing that our journey wouldn't always be easy, I'd still want the chance to love you, to know you, and to make a life filled with memories with you.</p><p class="page">Because it's you, Maha. It's always been you, and as long as we both keep choosing to nurture the love we have, I'll keep doing my best to make you feel loved, valued, and appreciated. I love you, Maha, so much more than you know, and I hope that when we look back on our story someday, we'll be proud of how far we've come and how much we've grown together. Until the very end, Maha. I love you, always.</p><p class="page">Please forgive your baby because he's seloso soo much.</p></div>
+        <div class="nav" id="nav">
+          <div class="dots" id="dots"></div>
+          <button id="next" class="btn-next">Next ›</button>
+        </div>
+        <div class="choices hidden" id="choices">
+          <button id="yes" class="btn-yes">I Forgive you baby!</button>
+          <button id="no" class="btn-no">No</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating I LOVE YOU words -->
+    <div class="love-layer" id="loveLayer"></div>
+
+    <section class="garden">
+      <div class="halo"></div>
+
+      <svg id="bouquet" viewBox="0 0 500 540"
+           xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="A colorful bouquet of flowers">
+
+        <defs>
+          <linearGradient id="stem" x1="0" y1="0" x2="1" y2="0">
+            <stop stop-color="#225638"/>
+            <stop offset=".5" stop-color="#6bc87d"/>
+            <stop offset="1" stop-color="#286c48"/>
+          </linearGradient>
+
+          <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#fff0fc"/>
+            <stop offset=".45" stop-color="#cba4f5"/>
+            <stop offset="1" stop-color="#8752b7"/>
+          </linearGradient>
+
+          <linearGradient id="paperFold" x1="0" y1="0" x2="1" y2="1">
+            <stop stop-color="#ffe2f3"/>
+            <stop offset="1" stop-color="#d887c5"/>
+          </linearGradient>
+
+          <radialGradient id="pink">
+            <stop stop-color="#fff1fa"/>
+            <stop offset=".5" stop-color="#ffacd9"/>
+            <stop offset="1" stop-color="#ed4d9d"/>
+          </radialGradient>
+
+          <radialGradient id="purple">
+            <stop stop-color="#fff0ff"/>
+            <stop offset=".55" stop-color="#d8a0ff"/>
+            <stop offset="1" stop-color="#8645d6"/>
+          </radialGradient>
+
+          <radialGradient id="gold">
+            <stop stop-color="#fff7bc"/>
+            <stop offset="1" stop-color="#d99432"/>
+          </radialGradient>
+
+          <!-- Pink rose -->
+          <g id="rose">
+            <g class="petal-ring">
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(45)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(90)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(135)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(180)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(225)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(270)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#pink)" transform="rotate(315)"/>
+            </g>
+            <circle r="11" fill="#f17ab5"/>
+            <path d="M-7 0 Q-3 -10 5 -5 Q12 1 3 7 Q-4 10 -7 0Z"
+                  fill="#ffdaed" stroke="#d94c99" stroke-width="1.5"/>
+            <path d="M-2 2 Q4 -5 7 1 Q5 7 0 5"
+                  fill="none" stroke="#d94c99" stroke-width="1.5"/>
+          </g>
+
+          <!-- Purple rose -->
+          <g id="purpleRose">
+            <g class="petal-ring">
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(45)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(90)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(135)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(180)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(225)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(270)"/>
+              <ellipse cy="-17" rx="10" ry="19" fill="url(#purple)" transform="rotate(315)"/>
+            </g>
+            <circle r="10" fill="#b57ae8"/>
+            <path d="M-6 0 Q-2 -9 5 -4 Q10 2 2 7 Q-5 8 -6 0Z"
+                  fill="#f4d9ff" stroke="#a466d4" stroke-width="1.5"/>
+          </g>
+
+          <!-- White daisy -->
+          <g id="daisy">
+            <g class="petal-ring">
+              <ellipse cy="-18" rx="7" ry="17" fill="#fff7ff"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#f8ddff" transform="rotate(40)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#fff7ff" transform="rotate(80)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#f8ddff" transform="rotate(120)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#fff7ff" transform="rotate(160)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#f8ddff" transform="rotate(200)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#fff7ff" transform="rotate(240)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#f8ddff" transform="rotate(280)"/>
+              <ellipse cy="-18" rx="7" ry="17" fill="#fff7ff" transform="rotate(320)"/>
+            </g>
+            <circle r="9" fill="url(#gold)"/>
+            <circle r="4" fill="#b8792d"/>
+          </g>
+
+          
+          <!-- Lily -->
+          <linearGradient id="lilyGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop stop-color="#f3ffb0"/>
+            <stop offset=".3" stop-color="#ffffff"/>
+            <stop offset=".75" stop-color="#ffc4e3"/>
+            <stop offset="1" stop-color="#ff86c2"/>
+          </linearGradient>
+          <g id="lily">
+            <g class="petal-ring">
+              <path d="M0 0 Q-15 -20 0 -48 Q15 -20 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(0)"/><path d="M0 0 Q-15 -20 0 -48 Q15 -20 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(60)"/><path d="M0 0 Q-15 -20 0 -48 Q15 -20 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(120)"/><path d="M0 0 Q-15 -20 0 -48 Q15 -20 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(180)"/><path d="M0 0 Q-15 -20 0 -48 Q15 -20 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(240)"/><path d="M0 0 Q-15 -20 0 -48 Q15 -20 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(300)"/>
+              <path d="M0 0 Q-13 -18 0 -40 Q13 -18 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(30)"/><path d="M0 0 Q-13 -18 0 -40 Q13 -18 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(90)"/><path d="M0 0 Q-13 -18 0 -40 Q13 -18 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(150)"/><path d="M0 0 Q-13 -18 0 -40 Q13 -18 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(210)"/><path d="M0 0 Q-13 -18 0 -40 Q13 -18 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(270)"/><path d="M0 0 Q-13 -18 0 -40 Q13 -18 0 0Z" fill="url(#lilyGrad)" stroke="#ff9ccc" stroke-width="1" transform="rotate(330)"/>
+              <g fill="#d6458f" opacity=".8"><g transform="rotate(0)"><circle cx="-3" cy="-20" r="1.3"/><circle cx="3" cy="-26" r="1.3"/><circle cx="-2" cy="-31" r="1.2"/></g><g transform="rotate(60)"><circle cx="-3" cy="-20" r="1.3"/><circle cx="3" cy="-26" r="1.3"/><circle cx="-2" cy="-31" r="1.2"/></g><g transform="rotate(120)"><circle cx="-3" cy="-20" r="1.3"/><circle cx="3" cy="-26" r="1.3"/><circle cx="-2" cy="-31" r="1.2"/></g><g transform="rotate(180)"><circle cx="-3" cy="-20" r="1.3"/><circle cx="3" cy="-26" r="1.3"/><circle cx="-2" cy="-31" r="1.2"/></g><g transform="rotate(240)"><circle cx="-3" cy="-20" r="1.3"/><circle cx="3" cy="-26" r="1.3"/><circle cx="-2" cy="-31" r="1.2"/></g><g transform="rotate(300)"><circle cx="-3" cy="-20" r="1.3"/><circle cx="3" cy="-26" r="1.3"/><circle cx="-2" cy="-31" r="1.2"/></g></g>
+            </g>
+            <g stroke="#b8792d" stroke-width="1.6" stroke-linecap="round">
+              <path d="M0 0 L-8 -19"/><path d="M0 0 L0 -24"/><path d="M0 0 L8 -19"/>
+            </g>
+            <g fill="#e07a1f">
+              <ellipse cx="-8" cy="-20" rx="2.4" ry="4" transform="rotate(-20 -8 -20)"/>
+              <ellipse cx="0" cy="-25" rx="2.4" ry="4"/>
+              <ellipse cx="8" cy="-20" rx="2.4" ry="4" transform="rotate(20 8 -20)"/>
+            </g>
+          </g>
+
+          <!-- Lavender sprig -->
+          <g id="lavender">
+            <path d="M0 8 Q-2 -15 0 -42"
+                  stroke="#65b775" stroke-width="3" fill="none"/>
+            <g fill="#bd8aff" stroke="#efd8ff" stroke-width=".7">
+              <ellipse cx="-5" cy="-8" rx="5" ry="8" transform="rotate(-35 -5 -8)"/>
+              <ellipse cx="5" cy="-15" rx="5" ry="8" transform="rotate(35 5 -15)"/>
+              <ellipse cx="-5" cy="-23" rx="5" ry="8" transform="rotate(-35 -5 -23)"/>
+              <ellipse cx="4" cy="-31" rx="5" ry="8" transform="rotate(35 4 -31)"/>
+              <ellipse cy="-39" rx="4" ry="7"/>
+            </g>
+          </g>
+        </defs>
+
+        <!-- Main stems and branches, connected to the bouquet -->
+        <g class="stems" fill="none" stroke="url(#stem)"
+           stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+
+          <path d="M250 430 Q150 285 85 155"/>
+          <path d="M250 430 Q175 270 145 115"/>
+          <path d="M250 430 Q210 240 210 95"/>
+          <path d="M250 430 Q250 245 250 125"/>
+          <path d="M250 430 Q285 245 305 100"/>
+          <path d="M250 430 Q340 270 375 150"/>
+          <path d="M250 430 Q365 330 410 245"/>
+
+          <!-- Inner branches -->
+          <path d="M220 370 Q160 285 125 205"/>
+          <path d="M225 335 Q185 270 185 190"/>
+          <path d="M245 345 Q230 265 235 175"/>
+          <path d="M265 345 Q290 260 285 175"/>
+          <path d="M280 370 Q325 290 340 210"/>
+          <path d="M215 395 Q155 370 115 325"/>
+          <path d="M285 395 Q345 365 390 315"/>
+
+          <!-- Lily stems -->
+          <path d="M230 380 Q170 280 180 150"/>
+          <path d="M270 380 Q340 270 330 145"/>
+          <path d="M250 400 Q268 220 262 68"/>
+        </g>
+
+        <!-- Full greenery -->
+        <g class="leaves">
+          <path d="M185 325 Q130 285 135 245 Q180 265 185 325Z" fill="#4bb96e"/>
+          <path d="M200 345 Q145 350 120 310 Q170 300 200 345Z" fill="#2e814e"/>
+          <path d="M205 285 Q160 255 170 220 Q205 240 205 285Z" fill="#69c97d"/>
+          <path d="M225 325 Q180 300 185 270 Q220 285 225 325Z" fill="#318650"/>
+          <path d="M260 315 Q300 275 290 240 Q260 265 260 315Z" fill="#54b76d"/>
+          <path d="M285 335 Q335 300 335 265 Q295 280 285 335Z" fill="#2e814e"/>
+          <path d="M300 355 Q350 355 380 315 Q330 310 300 355Z" fill="#59bd75"/>
+          <path d="M240 370 Q195 350 190 320 Q230 330 240 370Z" fill="#60c77a"/>
+          <path d="M265 375 Q310 340 320 310 Q280 325 265 375Z" fill="#368f55"/>
+          <path d="M160 375 Q120 365 105 335 Q145 335 160 375Z" fill="#65c77a"/>
+          <path d="M320 390 Q365 380 390 350 Q345 350 320 390Z" fill="#3d9858"/>
+          <path d="M230 290 Q205 260 215 235 Q240 255 230 290Z" fill="#70d083"/>
+        </g>
+
+        <!-- 14 flower heads -->
+        <g class="flower flower-1" transform="translate(85 155) scale(1.05)">
+          <use href="#rose"/>
+        </g>
+        <g class="flower flower-2" transform="translate(145 115) scale(.90)">
+          <use href="#daisy"/>
+        </g>
+        <g class="flower flower-3" transform="translate(210 95) scale(1.05)">
+          <use href="#purpleRose"/>
+        </g>
+        <g class="flower flower-4" transform="translate(250 125) scale(.92)">
+          <use href="#daisy"/>
+        </g>
+        <g class="flower flower-5" transform="translate(305 100) scale(1.05)">
+          <use href="#rose"/>
+        </g>
+        <g class="flower flower-6" transform="translate(375 150) scale(1.05)">
+          <use href="#purpleRose"/>
+        </g>
+        <g class="flower flower-7" transform="translate(410 245) scale(.85)">
+          <use href="#daisy"/>
+        </g>
+
+        <g class="flower flower-8" transform="translate(125 205) scale(.83)">
+          <use href="#purpleRose"/>
+        </g>
+        <g class="flower flower-9" transform="translate(185 190) scale(.78)">
+          <use href="#rose"/>
+        </g>
+        <g class="flower flower-10" transform="translate(235 175) scale(.85)">
+          <use href="#purpleRose"/>
+        </g>
+        <g class="flower flower-11" transform="translate(285 175) scale(.82)">
+          <use href="#daisy"/>
+        </g>
+        <g class="flower flower-12" transform="translate(340 210) scale(.84)">
+          <use href="#rose"/>
+        </g>
+        <g class="flower flower-13" transform="translate(115 325) scale(.68)">
+          <use href="#daisy"/>
+        </g>
+        <g class="flower flower-14" transform="translate(390 315) scale(.7)">
+          <use href="#purpleRose"/>
+        </g>
+
+        <!-- Lilies -->
+        <g class="flower flower-15" transform="translate(180 150) rotate(-12) scale(.95)">
+          <use href="#lily"/>
+        </g>
+        <g class="flower flower-16" transform="translate(330 145) rotate(14) scale(.95)">
+          <use href="#lily"/>
+        </g>
+        <g class="flower flower-17" transform="translate(262 68) rotate(4) scale(1.1)">
+          <use href="#lily"/>
+        </g>
+
+        <!-- Lavender accents -->
+        <g class="sprig sprig-1" transform="translate(165 230) rotate(-15)">
+          <use href="#lavender"/>
+        </g>
+        <g class="sprig sprig-2" transform="translate(315 235) rotate(12)">
+          <use href="#lavender"/>
+        </g>
+        <g class="sprig sprig-3" transform="translate(245 245) rotate(-5)">
+          <use href="#lavender"/>
+        </g>
+
+        <!-- Bouquet wrapping -->
+        <g class="wrapping">
+          <path d="M100 260 L250 480 L400 260
+                   Q325 292 250 280 Q175 292 100 260Z"
+                fill="url(#paper)" stroke="#f5dcff" stroke-width="2"/>
+
+          <path d="M100 260 Q250 335 400 260
+                   L360 320 Q250 375 140 320Z"
+                fill="url(#paperFold)" opacity=".95"/>
+
+          <path d="M140 285 L250 460 L360 285"
+                stroke="#fff2ff" stroke-width="3"
+                opacity=".8" fill="none"/>
+
+          <path d="M165 310 L235 435 M335 310 L265 435"
+                stroke="#ad7ad5" stroke-width="2" opacity=".7"/>
+
+          <!-- Ribbon -->
+          <path d="M250 370
+                   C210 320 165 340 195 372
+                   C220 395 240 378 250 370
+                   C280 325 335 345 300 378
+                   C278 397 260 379 250 370Z"
+                fill="#d85eae" stroke="#ffe1f5" stroke-width="2"/>
+
+          <path d="M244 377 L220 428 L252 409 L270 433 L258 375Z"
+                fill="#f3a1d7" stroke="#c85ca9" stroke-width="2"/>
+
+          <circle cx="250" cy="371" r="9" fill="#ffe4f5"/>
+
+          <!-- Gift tag -->
+          <g class="gift-tag">
+            <path d="M250 382 L250 409" stroke="#fce7ff" stroke-width="2"/>
+            <path d="M253 407 L296 407 L296 462 L253 462Z"
+                  fill="#e7c6ff" stroke="#fff0ff" stroke-width="2"/>
+            <text x="274" y="429" text-anchor="middle"
+                  fill="#693f8c" font-size="10" font-family="Georgia">For you</text>
+            <text x="274" y="447" text-anchor="middle"
+                  fill="#b44d9b" font-size="16">♡</text>
+          </g>
+        </g>
+      </svg>
+
+      <div class="ground-glow"></div>
+    </section>
+
+    </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
